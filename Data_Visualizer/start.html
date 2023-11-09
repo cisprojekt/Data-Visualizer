@@ -1,0 +1,33 @@
+<!doctype html>
+<base href="<?php echo base_url(); ?>">
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <mate name="viewport" content="width=device-width"/>
+        <title>Data Visualizer</title>
+        <link href="style/mainstyle.css" rel="stylesheet">
+        <script src="script/mainscript.js" defer></script>
+    </head>
+    
+    <body>
+        <h1>Data Visualizer</h1>
+        <div>
+        <form id="inputtext" action="upload/upload.php" method="post">
+            <textarea id="input" rol="100"  col="700" name="input_seq" placeholder="your sequence here"></textarea><br/>
+            <button id="submitbtn" type="submit">submit your sequence</button>
+        </form>
+        </div>
+        <br/>
+        <div>
+            <form id="inputdata" action="upload/upload.php" method="post" 
+enctype="multipart/form-data">
+    <input type="file" id="uploadfile" name="upload" /> 
+    <input type="submit" value="upload"/>
+</form>
+        </div>
+        <br/>
+        <div>
+            <button id="runbtn" >Run</button> <button id="cleanupbtn">clean up</button>
+        </div>
+    </body>
+</html>
