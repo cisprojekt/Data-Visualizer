@@ -1,0 +1,58 @@
+
+body {
+    font-family: "Inter", sans-serif;
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    padding: 20px;
+    background-color: #ebaccb; /* Light gray background for header */
+    margin-bottom: 10px;
+}
+
+.mainbody{
+    text-align: left;
+    background-color: rgb(255, 253, 224);
+}
+.feet{
+    text-align: left;
+    background-color: rgb(184, 180, 180);
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: left;
+}
+
+button{
+    background-color: #969FE2;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+button#delete{
+    background-color: rgb(150, 7, 7);
+    color: bisque;
+}
+button#delete:hover{
+    background-color: red;
+}
+
+button:hover{
+    background-color: rgb(149, 220, 236);
+    transition-duration: 0.2s;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,0.10) ;
+}
+button:active{
+    transform: translateY(3px);
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<base href="<?php echo base_url(); ?>">
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <mate name="viewport" content="width=device-width"/>
+        <title>Data Visualizer</title>
+        <link href="style/mainstyle.css" rel="stylesheet">
+        <script src="script/mainscript.js" defer></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1>Date Visualizer</h1>
+            <p  id="welcome"></p>
+ 
+        </div>
+        
+        <div class="mainbody">
+            <textarea cols="30" rows="10"></textarea>
+            <div class="btn">
+                <button id="textsubmit">submit your text</button>
+            </div>
+            <ul class="msg"></ul>
+        </div>
+
+        <div>
+            <input type="file" id="uploadfile" name="upload" /> 
+            <input type="submit" onclick="uploadfile()" value="upload"/>
+        </div>
+        <br/>
+        <div>
+            <button id="runbtn" >Run</button> <button id="delete">clean up</button>
+        </div>
+    </body>
+</html>
