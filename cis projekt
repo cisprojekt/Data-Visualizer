@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Visualizer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            color: black;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ebaccb; /* Light gray background for header */
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin: 2px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #addDataButton,
+        #addFunctionButton,
+        #deleteFunctionButton,
+        #runFunctionButton {
+            display: inline-block;
+            width: 150px;
+            background-color: #969FE2;
+        }
+
+        #deleteFunctionButton {
+            background-color: #E8C9C9; /* Pastel pink */
+            color: black;
+        }
+
+        #runFunctionButton {
+            background-color: #A1BFA3; /* Pastel dark green */
+            color: black;
+        }
+        textarea {
+            width: 600px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Data Visualizer</h1>
+        <p>Welcome to the Data Visualizer tool. This tool allows you to upload data in CSV format, define functions, and visualize the results. Follow the instructions below to get started:</p>
+        <ol>
+            <li>Click "Add Data" to upload a CSV file with your data.</li>
+            <li>Click "Add Function" to add predefined functions for visualization.</li>
+            <li>Type or edit your custom functions in the textarea provided.</li>
+            <li>Click "Run" to execute the selected function on your data.</li>
+            <li>Use "Delete All" to clear the function input field.</li>
+        </ol>
+    </header>
+
+    <main>
+        <textarea id="functionInput" placeholder="Type here..."></textarea><br />
+
+        <!-- Add Data Section -->
+        <button type="button" id="addDataButton">Add Data</button>
+
+        <!-- Add Function Section -->
+        <button type="button" id="addFunctionButton">Add Function</button>
+
+        <!-- Delete and Run buttons in one line -->
+        <div>
+            <button type="button" id="deleteFunctionButton">Delete All</button>
+            <button type="button" id="runFunctionButton">Run</button>
+        </div>
+
+        <!-- File Input for Data -->
+        <input type="file" id="dataFile" name="dataFile" accept=".csv" style="display: none;" />
+    </main>
+
+    <script>
+        document.getElementById('addDataButton').addEventListener('click', function () {
+            document.getElementById('dataFile').click();
+        });
+
+        document.getElementById('addFunctionButton').addEventListener('click', function () {
+            addPredefinedFunction();
+        });
+
+        document.getElementById('deleteFunctionButton').addEventListener('click', function () {
+            document.getElementById('functionInput').value = '';
+        });
+
+        document.getElementById('runFunctionButton').addEventListener('click', function () {
+            var functionInput = document.getElementById('functionInput').value;
+            alert('Running function: ' + functionInput);
+            // Add your function run functionality here
+        });
+
+        document.getElementById('dataFile').addEventListener('change', function () {
+            var fileInput = document.getElementById('dataFile');
+            var file = fileInput.files[0];
+
+            if (file && file.name.endsWith('.csv')) {
+                alert('Data uploaded successfully!');
+                // Add your data upload functionality here
+            } else {
+                alert('Please select a valid CSV file.');
+            }
+        });
+
+        function addPredefinedFunction() {
+            // You can customize this function to add the desired predefined function
+            var predefinedFunction = "d(p,q)=sqrt {(q_{1}-p_{1})^{2}+(q_{2}-p_{2})^{2}";
+            var currentInput = document.getElementById('functionInput').value;
+
+            if (currentInput) {
+                // If there's already a function, append a line break and the predefined function
+                document.getElementById('functionInput').value += '\n' + predefinedFunction;
+            } else {
+                // If there's no existing function, simply set the predefined function
+                document.getElementById('functionInput').value = predefinedFunction;
+            }
+        }
+    </script>
+</body>
+
+</html>
