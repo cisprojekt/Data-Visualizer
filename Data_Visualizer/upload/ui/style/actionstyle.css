@@ -1,0 +1,23 @@
+button:hover{
+    background-color: rgb(149, 220, 236);
+    transition-duration: 0.2s;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,0.10) ;
+}
+button:active{
+    transform: translateY(3px);
+}
+
+button#deleteFunctionButton{
+    background-color: rgb(150, 7, 7);
+    color: bisque;
+}
+button#deleteFunctionButton:hover{
+    background-color: #ff0000;
+}
+
+button#runFunctionButton{
+    background-color: #A1BFA3;
+}
+button#runFunctionButton:hover{
+    background-color: rgb(81, 255, 65);
+}
