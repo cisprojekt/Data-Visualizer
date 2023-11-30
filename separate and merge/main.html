@@ -54,15 +54,15 @@
             <!-- Here the funtional buttons -->
             <div>
                 <!-- Formal and real Button for add data --> 
-                <button id="addDataButton" onclick="">
+                <button id="addDataButton" onclick="uploudandshowinhalt()">
                     Add Data
                 </button>
-                <input type="file" id="filedata" accept=".CSV" style="display: none;">    
+                <input type="file" id="fileUpload" accept=".CSV" style="display: none;">    
                 
                 <!-- Choose Funciton Button -->
-                <select name="selcetFunction">
-                    <option>Euclidean distance</option>
-                    <option>Tanimoto distance</option>
+                <select id="D_function" name="selcetFunction">
+                    <option value="Euclidean">Euclidean distance</option>
+                    <option value="Tanimoto">Tanimoto distance</option>
                 </select>
             </div>
             
@@ -118,9 +118,5 @@
 </body>
 
 <script>
-
-    document.getElementById("addDataButton").addEventListener('click', function(){
-        document.getElementById("filedata").click();
-    })
 
 </script>
