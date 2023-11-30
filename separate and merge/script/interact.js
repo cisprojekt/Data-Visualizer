@@ -23,26 +23,43 @@ function showresult(){
 function getinputdata(){
     let textinput = document.getElementById("text_box").value;
     if(textinput.lengtg==0){
-        alert("Please enter your data in the input box");
+        alert("No data avilable.");
     }
     else{
-        return textinput;
+        return textinput
     }
 };
 
-function getFileinhalt(){
+function showFileInhalt(){
     let fileObj = document.getElementById("filedata");
-    if(fileObj.value==''){
-        alert("No file detected!")
+    
+    let userFile = fileObj.files[0];
+    let fileName = userFile.name;
+    alert(fileName);
+    let textBox = document.getElementById("text_box");
+    textBox.value = dataInhalt;
+    //let reader = new FileReader();
+    //reader.onload = writeInhalt;
+    //reader.readAsText(dataInhalt, "utf-8")
+    if(fileObj.files[0] == undefined){
+        alert("No files loaded!")
+    }else{
+        
     }
-    else{
-        let dataInhalt = fileObj.files[0];
-        return dataInhalt;
-    }
+    
 };
+
+function writeInhalt(e){
+    let inhalt = e.target.result;
+    let textBox = document.getElementById("text_box");
+    textBox.value = inhalt;
+}
 
 function getfunctionflag(){
-
+    let funcSelector= document.getElementById("D_function");
+    let funcIndex=funcSelector.selectedIndex;
+    let funcFlag=funcSelector.options[funcIndex].value;
+    return funcFlag;
 };
 
 
@@ -55,11 +72,16 @@ function initializeMap() {
 
 
 /*+++++++++++++++++++++++ function for buttons ++++++++++++++++++++ */
+function uploudandshowinhalt(){
+    let fileInput = document.getElementById("fileUpload");
+    fileInput.click();
+    alert(fileInput.files[0].name)
+}
+
 
 function dealwithrun(){
-    
-    
-
+    getinputdata();
+    getfunctionflag()
     /*Send Data and functionflag to IV-Grupp*/
     /*Should get sth back and send to Map-Gruppp, denn initialis the Map*/
 
@@ -71,7 +93,10 @@ function dealwithrun(){
 };
 
 function deletedatenandfunc(){
-    confirm("Are you sure to weep all the data and choosen function?");
+    let weep = confirm("Are you sure to weep all the data and choosen function?");
+    if(weep){
+        document.getElementById("text_box").value="";
+    }
 };
 
 function back2input(){
