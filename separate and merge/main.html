@@ -54,13 +54,14 @@
             <!-- Here the funtional buttons -->
             <div>
                 <!-- Formal and real Button for add data --> 
-                <button id="addDataButton" onclick="uploudandshowinhalt()">
+                <button type="button" id="addDataButton" >
                     Add Data
                 </button>
-                <input type="file" id="fileUpload" accept=".CSV" style="display: none;">    
+                <input type="file" id="dataFile" name="dataFile" accept=".CSV" style="display: none;">    
                 
                 <!-- Choose Funciton Button -->
                 <select id="D_function" name="selcetFunction">
+                    <option value="default">Add function</option>
                     <option value="Euclidean">Euclidean distance</option>
                     <option value="Tanimoto">Tanimoto distance</option>
                 </select>
@@ -68,11 +69,11 @@
             
             <div>
                 <!-- Delete All Button -->
-                <button id="deleAllButton" onclick="deletedatenandfunc()">
+                <button type="button" id="deleAllButton" onclick="deletedatenandfunc()">
                     Delete All
                 </button>
                 <!-- Run function Button -->
-                <button id="runFuncButton" onclick="dealwithrun()">
+                <button type="button" id="runFuncButton" onclick="dealwithrun()">
                     Run
                 </button>
             </div>
@@ -99,8 +100,11 @@
 
             <!-- map Container -->
             <div id="mapContainer" style="width: 50%; height: 100%;">
-                <div id="chartContainer">chartContainer</div>
-                <div id="chartContainerMap">chartContainerMap</div>
+                <div id="chartContainer" style="width: 80%;">
+                    <div id="chartContainerMap"  style="width: 80%;">chartContainerMap</div>
+                    <button type="button" style="float: right;">full screen</button>
+                </div>
+                
             </div>
         </div>
 
@@ -110,7 +114,7 @@
     <footer>
         <div>
             <!-- Back Button -->
-            <button id="BackButton" style="float: right;" onclick="back2input()">
+            <button type="button" id="BackButton" style="float: right;" onclick="back2input()">
                 Start New
             </button>
         </div> 
@@ -118,5 +122,33 @@
 </body>
 
 <script>
+    document.getElementById('addDataButton').addEventListener('click', function () {
+            document.getElementById('dataFile').click();
+            
+        });
+    
+        document.getElementById('dataFile').addEventListener('change', function (){
+            readFileInhalt();
+        })
+        /*‚
+    document.getElementById('dataFile').addEventListener('change', function () {
+            var fileInput = document.getElementById('dataFile');
+            var file = fileInput.files[0];
+
+            if (file && file.name.endsWith('.csv')) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Display or process the contents of the CSV file here
+                    var csvContent = e.target.result;
+                    alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
+                };
+
+                reader.readAsText(file);
+            } else {
+                alert('Please select a valid CSV file.');
+            }
+        });
+*/
 
 </script>

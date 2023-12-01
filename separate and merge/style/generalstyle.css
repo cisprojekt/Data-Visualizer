@@ -13,7 +13,6 @@ p{
 
 header{
     width: 100%;
-    min-width: 800px;
     padding: 15px;
     background-color: #ebaccb; 
 }
@@ -21,16 +20,13 @@ header{
 
 main{
     width: 100%;
-    min-width: 800px;
-    height: 100%;
     padding: 15px;
     background-color: rgb(255, 253, 224);
 }
 
 footer{
     width: 100%;
-    min-width: 800px;
-    height: 40px;
+    min-height: 40px;
     text-align: left;
     padding: 5px;
     background-color: rgb(184, 180, 180);
