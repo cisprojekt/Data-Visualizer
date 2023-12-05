@@ -50,30 +50,6 @@ function readFileInhalt(){
     }
 }
 
-<<<<<<< Updated upstream
-=======
-function showFileInhalt(){
-    let fileInput = document.getElementById("dataFile");
-    let file = fileInput.files[0];
-
-    if (file && file.name.endsWith('.csv')) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Display or process the contents of the CSV file here
-            var csvContent = e.target.result;
-            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
-        };
-
-        reader.readAsText(file);
-    } else {
-        alert('Please select a valid CSV file.');
-    }
-    
-};
-
-
->>>>>>> Stashed changes
 function getfunctionflag(){
     let funcSelector= document.getElementById("D_function");
     let funcIndex=funcSelector.selectedIndex;
