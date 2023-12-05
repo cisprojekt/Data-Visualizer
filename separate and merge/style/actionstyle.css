@@ -8,16 +8,16 @@ button:active{
 }
 
 button#deleAllButton{
-    background-color: rgb(150, 7, 7);
-    color: bisque;
+    background-color: #E8C9C9;
+    color: black;
 }
 button#deleAllButton:hover{
-    background-color: #ff0000;
+    background-color: #db9e9e;
 }
 
 button#runFuncButton{
     background-color: #A1BFA3;
 }
 button#runFuncButton:hover{
-    background-color: rgb(81, 255, 65);
+    background-color: rgb(172, 227, 181);
 }
