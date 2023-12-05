@@ -22,8 +22,8 @@ function showresult(){
 
 function getinputdata(){
     let textinput = document.getElementById("text_box").value;
-    if(textinput.length==0){
-        alert("No data avilable.");
+    if(textinput==""){
+        return false;
     }
     else{
         return textinput;
@@ -81,7 +81,7 @@ function dealwithrun(){
     } 
     else{
         alert("No data avilable.");
-        
+        return false;
     }
     
     /*Send Data and functionflag to IV-Grupp*/
