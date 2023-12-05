@@ -50,6 +50,25 @@ function readFileInhalt(){
     }
 }
 
+/*
+function showFileInhalt(){
+    let fileInput = document.getElementById("dataFile");
+    let file = fileInput.files[0];
+
+    if (file && file.name.endsWith('.csv')) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // Display or process the contents of the CSV file here
+            var csvContent = e.target.result;
+            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
+        };
+
+        reader.readAsText(file);
+    } else {
+        alert('Please select a valid CSV file.');
+    }
+};*/
 
 function showFileInhalt(){
     let fileInput = document.getElementById("dataFile");
@@ -69,64 +88,6 @@ function showFileInhalt(){
         alert('Please select a valid CSV file.');
     }
 };
-
-function showFileInhalt(){
-    let fileInput = document.getElementById("dataFile");
-    let file = fileInput.files[0];
-
-    if (file && file.name.endsWith('.csv')) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Display or process the contents of the CSV file here
-            var csvContent = e.target.result;
-            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
-        };
-
-        reader.readAsText(file);
-    } else {
-        alert('Please select a valid CSV file.');
-    }
-    /*
-    let fileName = userFile.name;
-    alert(fileName);
-    let textBox = document.getElementById("text_box");
-    textBox.value = dataInhalt;
-    let reader = new FileReader();
-    reader.onload = writeInhalt;
-    reader.readAsText(dataInhalt, "utf-8")
-    if(fileObj.files[0] == undefined){
-        alert("No files loaded!")
-    }else{
-        
-    }
-   
-    document.getElementById('dataFile').addEventListener('change', function () {
-        var fileInput = document.getElementById('');
-        var file = fileInput.files[0];
-
-        if (file && file.name.endsWith('.csv')) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                // Display or process the contents of the CSV file here
-                var csvContent = e.target.result;
-                alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
-            };
-
-            reader.readAsText(file);
-        } else {
-            alert('Please select a valid CSV file.');
-        }
-    });
- */
-};
-
-function writeInhalt(){
-    let inhalt = "test intalt";
-    let textBox = document.getElementById("text_box");
-    textBox.value = inhalt;
-}
 
 function getfunctionflag(){
     let funcSelector= document.getElementById("D_function");
