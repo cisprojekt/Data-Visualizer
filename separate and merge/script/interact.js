@@ -41,7 +41,7 @@ function readFileInhalt(){
             var csvContent = e.target.result;
             let textBox = document.getElementById('text_box');
             textBox.value=csvContent;
-            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
+            //alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
         };
 
         reader.readAsText(file);
