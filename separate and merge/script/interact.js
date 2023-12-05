@@ -22,11 +22,11 @@ function showresult(){
 
 function getinputdata(){
     let textinput = document.getElementById("text_box").value;
-    if(textinput.lengtg==0){
+    if(textinput.length==0){
         alert("No data avilable.");
     }
     else{
-        return textinput
+        return textinput;
     }
 };
 
@@ -50,45 +50,6 @@ function readFileInhalt(){
     }
 }
 
-/*
-function showFileInhalt(){
-    let fileInput = document.getElementById("dataFile");
-    let file = fileInput.files[0];
-
-    if (file && file.name.endsWith('.csv')) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Display or process the contents of the CSV file here
-            var csvContent = e.target.result;
-            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
-        };
-
-        reader.readAsText(file);
-    } else {
-        alert('Please select a valid CSV file.');
-    }
-};*/
-
-function showFileInhalt(){
-    let fileInput = document.getElementById("dataFile");
-    let file = fileInput.files[0];
-
-    if (file && file.name.endsWith('.csv')) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Display or process the contents of the CSV file here
-            var csvContent = e.target.result;
-            alert('Data uploaded successfully!\n\nCSV Content:\n' + csvContent);
-        };
-
-        reader.readAsText(file);
-    } else {
-        alert('Please select a valid CSV file.');
-    }
-};
-
 function getfunctionflag(){
     let funcSelector= document.getElementById("D_function");
     let funcIndex=funcSelector.selectedIndex;
@@ -106,24 +67,29 @@ function initializeMap() {
 
 
 /*+++++++++++++++++++++++ function for buttons ++++++++++++++++++++ */
-function ReadAndWriteInhalt(){
-    let fileInput = document.getElementById("fileUpload");
-    fileInput.click();
-    alert(fileInput.files[0].name)
-}
 
 
 function dealwithrun(){
-    getinputdata();
-    getfunctionflag()
+    let punktdata = "";
+    punktdata = getinputdata();
+    let functionFlag = getfunctionflag();
+    if(punktdata != ""){
+        alert("Start Map initialising");
+        hideprepera();
+        showresult();
+        initializeMap();
+    } 
+    else{
+        alert("No data avilable.");
+        
+    }
+    
     /*Send Data and functionflag to IV-Grupp*/
     /*Should get sth back and send to Map-Gruppp, denn initialis the Map*/
 
     /*Hied the test-area and buttons*/
     /*Show Cluster list and map */
-    hideprepera();
-    showresult();
-    initializeMap();
+    
 };
 
 function deletedatenandfunc(){
