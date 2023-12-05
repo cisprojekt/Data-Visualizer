@@ -31,6 +31,11 @@
                 display: none;
             }
 
+            #mapHTMLContainer{
+                transform: scale(0.6);
+                position: relative;
+            }
+
         </style>
     </head>
 </html>
@@ -44,8 +49,6 @@
     </header>
 
     <main style="text-align: center;">
-
-        
         <div id="prepare">
             <!-- Input Area for daten and function -->
             <textarea id="text_box" name="textinput" placeholder="Type here..."></textarea>
@@ -84,7 +87,7 @@
         <div id="result" >
 
             <!-- Information Box -->
-            <div id="InforArea" style="width: 60%; height:80%; text-align: left;">
+            <div id="InforArea" style="text-align: left; border: none; width: 30%;">
                 <table id="InforList" style="padding: 5px; border: 1px solid;">
                     <tr>
                         <td>Cluster Information</td>
@@ -106,12 +109,11 @@
 
 
             <!-- map Container with html-->
-            <div id="mapContainer" style="width: 80%; min-height: 400px;" >
-                <button type="button" style="float: right;" onclick="window.open('mapstuff.html')">Full Screen</button>
-                <div id="mapHTMLContainer" style="width: 100%; height: 100%; margin-right: 15px;">
-                    <iframe  src="mapstuff.html"; style="border: none;" scrolling="auto"  width="100%" height="100%;">Here should be the map</iframe>
+            <div id="mapContainer" style="border: none; overflow: hidden; width: 70%; max-height: 500px;" >
+                <button type="button" style="float: left;" onclick="window.open('mapstuff.html')">Full Screen</button>
+                <div id="mapHTMLContainer" style="left: -240px; top: -145px" >
+                    <iframe id="map_iframe" src="mapstuff.html"; style="border: none; margin: 5px;" scrolling="auto" width="1330px" height="760px"  >Here should be the map</iframe>
                 </div>
-                
             </div>
         </div>
 
