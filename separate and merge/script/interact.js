@@ -70,7 +70,7 @@ function InhaltVorarbeiten(txt_inhalt){
     }   
 }
 
-/* Not complited */
+/* Fullscreen Not complited 
 
 function MapViewSwitcher(){
     let mapHTMLCtn = document.getElementById(mapContainer);
@@ -94,6 +94,7 @@ function MapViewSwitcher(){
     }
 }
 
+*/
 
 /*+++++++++++++++++++ functions from other grupps +++++++++++++++++++*/ 
 function initializeMap() {
