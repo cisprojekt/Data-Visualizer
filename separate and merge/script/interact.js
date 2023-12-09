@@ -57,6 +57,7 @@ function getfunctionflag(){
     return funcFlag;
 };
 
+/** This will check the first line and delete the axises */
 function InhaltVorarbeiten(txt_inhalt){
     if(txt_inhalt != ""){
         let first_enter = txt_inhalt.indexOf("\n");
