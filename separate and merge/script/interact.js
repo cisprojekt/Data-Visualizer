@@ -75,16 +75,16 @@ function InhaltVorarbeiten(txt_inhalt){
     }   
 }
 
-/* Fullscreen Not complited */
+/* Fullscreen in-Place */
 
 function MapViewSwitcher(){
     let clusterBox = document.getElementById("InforArea");
     let mapWindows = document.getElementById("map_iframe");
     let switchbutton = document.getElementById("switchbtn");
     if(switchbutton.innerHTML == "Full Screen"){
-        mapWindows.style.transform = "scale(1)";
-        mapWindows.style.left = "-50px";
-        mapWindows.style.top = "40px";
+        mapWindows.style.transform = "scale(0.99)";
+        mapWindows.style.left = "0px";
+        mapWindows.style.top = "0px";
         clusterBox.style.display = "none";
         switchbutton.innerHTML = 'Exit Full Screen';
         return 0;
