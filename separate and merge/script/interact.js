@@ -75,31 +75,30 @@ function InhaltVorarbeiten(txt_inhalt){
     }   
 }
 
-/* Fullscreen Not complited 
+/* Fullscreen Not complited */
 
 function MapViewSwitcher(){
-    let mapHTMLCtn = document.getElementById(mapContainer);
+    let clusterBox = document.getElementById("InforArea");
     let mapWindows = document.getElementById("map_iframe");
     let switchbutton = document.getElementById("switchbtn");
     if(switchbutton.innerHTML == "Full Screen"){
-        alert("change to full");
         mapWindows.style.transform = "scale(1)";
-        //mapWindows.style.left = "0px";
-        //mapWindows.style.top = "0px";
-        mapHTMLCtn.style.gridArea= "1/1/2/2";
+        mapWindows.style.left = "-50px";
+        mapWindows.style.top = "40px";
+        clusterBox.style.display = "none";
         switchbutton.innerHTML = 'Exit Full Screen';
         return 0;
     }else{
         mapWindows.style.transform = "scale(0.6)";
-        mapWindows.style.left = "-240px";
+        mapWindows.style.left = "-300px";
         mapWindows.style.top = "-145px";
-        mapWindows.style.zIndex = 4;
-        mapWindows.value = "preview";
+        clusterBox.style.display = "";
+        switchbutton.innerHTML = 'Full Screen';
         return 0;
     }
 }
 
-*/
+
 
 /*+++++++++++++++++++ functions from other grupps +++++++++++++++++++*/ 
 function initializeMap() {
