@@ -68,6 +68,9 @@ function InhaltVorarbeiten(txt_inhalt){
             txt_inhalt = txt_inhalt.substring(first_enter);
             console.log("axis removed:\n", txt_inhalt);
         }
+        else{
+            console.log("No axis-Line");
+        }
         return txt_inhalt;
     }   
 }
