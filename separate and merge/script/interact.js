@@ -66,6 +66,7 @@ function InhaltVorarbeiten(txt_inhalt){
         if(!first_line.match(coorindat)){
             console.log("axis include");
             txt_inhalt = txt_inhalt.substring(first_enter);
+            console.log("axis removed:\n", txt_inhalt);
         }
         return txt_inhalt;
     }   
