@@ -79,21 +79,21 @@ function InhaltVorarbeiten(txt_inhalt){
 
 function MapViewSwitcher(){
     let clusterBox = document.getElementById("InforArea");
-    let mapWindows = document.getElementById("map_iframe");
+    let mapWindows = document.getElementById("chartContainer");
     let switchbutton = document.getElementById("switchbtn");
     if(switchbutton.innerHTML == "Full Screen"){
-        mapWindows.style.transform = "scale(0.99)";
+        mapWindows.style.transform = "scale(1)";
         mapWindows.style.left = "0px";
-        mapWindows.style.top = "0px";
+        mapWindows.style.top = "10px";
         clusterBox.style.display = "none";
-        switchbutton.innerHTML = 'Exit Full Screen';
+        switchbutton.innerHTML = "Exit Full Screen";
         return 0;
     }else{
         mapWindows.style.transform = "scale(0.6)";
-        mapWindows.style.left = "-300px";
-        mapWindows.style.top = "-145px";
+        mapWindows.style.left = "-260px";
+        mapWindows.style.top = "-120px";
         clusterBox.style.display = "";
-        switchbutton.innerHTML = 'Full Screen';
+        switchbutton.innerHTML = "Full Screen";
         return 0;
     }
 }

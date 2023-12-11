@@ -285,7 +285,7 @@ var InfoScaling_Y_Text = infoScalingY.append("text")
 
 //create html button element and append it to svg
 var button_reset_embed = svg.append('foreignObject')
-    .attr('x', width - 150)
+    .attr('x', width - 140)
     .attr('y', height - 40)
     .attr('width', 150)
     .attr('height', 60)
