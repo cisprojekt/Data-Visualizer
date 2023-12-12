@@ -123,6 +123,12 @@
         
     </main>
 
+    <noscript>
+        <div id="nojs">
+            Error: JavaScript is not enabled in your browser. Please enable it for the best experience.
+        </div>
+    </noscript>
+
     <footer>
         <div>
             <!-- Back Button
@@ -142,5 +148,16 @@
         document.getElementById('dataFile').addEventListener('change', function (){
             readFileInhalt();
         })
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var statusElement = document.getElementById("js-status");
+
+            // Update the status element to indicate whether JavaScript is enabled
+            if (statusElement) {
+                statusElement.innerHTML = "JavaScript is enabled!";
+                statusElement.style.color = "green";
+            }
+
+        });
 
 </script>
