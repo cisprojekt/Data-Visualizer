@@ -59,10 +59,32 @@ function getfunctionflag(){
 
 /** This will check the first line and delete the axises */
 function InhaltVorarbeiten(txt_inhalt){
+    let coorindat = [];
     if(txt_inhalt != ""){
+        /*
         let first_enter = txt_inhalt.indexOf("\n");
         let first_line = txt_inhalt.substring(0, first_enter);
+         
         let coorindat = /^-?([1-9]d.d|0.d[1-9]d|0?.0+|0),-?([1-9]d.d|0.d[1-9]d|0?.0+|0)$/;
+
+        */
+        let lines = txt_inhalt.split('\n');
+        console.log(lines.length);
+        for(let i = 0; i < lines.length; i++){
+            let line = lines[i];
+            line =  line.split(',');
+            console.log(line, line.length);
+            if(line.length ==2 && parseFloat(line[0]) && parseFloat(line[1])){
+                console.log("coord found");
+                coorindat.push(line.toString());
+            }
+            else{
+                console.log("none-coord ")
+            }
+        }
+    }
+    /*
+       let coorindat = parseFloat(first_line);
         if(!first_line.match(coorindat)){
             console.log("axis include");
             txt_inhalt = txt_inhalt.substring(first_enter);
@@ -72,8 +94,12 @@ function InhaltVorarbeiten(txt_inhalt){
             console.log("No axis-Line");
         }
         return txt_inhalt;
-    }   
-}
+    */
+    if(coorindat.length > 0){
+        return coorindat.toString();
+    }
+    return "";
+} 
 
 /* Fullscreen in-Place */
 
