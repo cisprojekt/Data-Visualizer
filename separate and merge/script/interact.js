@@ -142,10 +142,12 @@ function dealwithrun(){
     punktdata = getinputdata();
     let functionFlag = getfunctionflag();
     if(punktdata != ""){
-        InhaltVorarbeiten(punktdata);
-        hideprepera();
-        showresult();
-        initializeMap();
+        if(InhaltVorarbeiten(punktdata)){
+            hideprepera();
+            showresult();
+            initializeMap();
+        }
+        
     } 
     else{
         alert("No data avilable.");
