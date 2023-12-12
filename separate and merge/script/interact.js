@@ -58,48 +58,34 @@ function getfunctionflag(){
 };
 
 /** This will check the first line and delete the axises */
-function InhaltVorarbeiten(txt_inhalt){
+function isCoordindat(txt_inhalt){
     let coorindat = [];
     if(txt_inhalt != ""){
-        /*
-        let first_enter = txt_inhalt.indexOf("\n");
-        let first_line = txt_inhalt.substring(0, first_enter);
-         
-        let coorindat = /^-?([1-9]d.d|0.d[1-9]d|0?.0+|0),-?([1-9]d.d|0.d[1-9]d|0?.0+|0)$/;
-
-        */
         let lines = txt_inhalt.split('\n');
         console.log(lines.length);
         for(let i = 0; i < lines.length; i++){
             let line = lines[i];
             line =  line.split(',');
-            console.log(line, line.length);
             if(line.length ==2 && parseFloat(line[0]) && parseFloat(line[1])){
                 console.log("coord found");
                 coorindat.push(line.toString());
             }
-            else{
-                console.log("none-coord ")
-            }
         }
     }
-    /*
-       let coorindat = parseFloat(first_line);
-        if(!first_line.match(coorindat)){
-            console.log("axis include");
-            txt_inhalt = txt_inhalt.substring(first_enter);
-            console.log("axis removed:\n", txt_inhalt);
-        }
-        else{
-            console.log("No axis-Line");
-        }
-        return txt_inhalt;
-    */
     if(coorindat.length > 0){
-        return coorindat.toString();
+        console.log("get");
+        return coorindat.toString;
     }
     return "";
 } 
+
+function isSequence(txt_inhalt, matchflag){
+
+}
+
+function isInChI(txt_inhalt, matchflag){
+    
+}
 
 /* Fullscreen in-Place */
 
@@ -139,18 +125,41 @@ function initializeMap() {
 
 function dealwithrun(){
     let punktdata = "";
-    punktdata = getinputdata();
+    let matchflag = new Boolean();
     let functionFlag = getfunctionflag();
-    if(punktdata != ""){
-        if(InhaltVorarbeiten(punktdata)){
-            hideprepera();
-            showresult();
-            initializeMap();
-        }
-        
+
+    punktdata = getinputdata();
+
+    switch(functionFlag){
+        case 'noChoice':
+            alert("Please choose a distance function");
+            break;
+        case 'Euclidean':
+            console.log("function as Euc");
+            punktdata = isCoordindat(punktdata);
+            if(Boolean(punktdata)){
+                console.log("match the euc")
+            }
+            else{
+                console.log("empty data or data dosen't match");
+            }
+            break;
+        case 'Tanimoto':
+            console.log("function as Tani");
+            break;
+        case 'Hamming':
+            break;
+        default:
+            console.log("Input datan dosen't match the distance function");
+    }
+
+    if(matchflag){
+        hideprepera();
+        showresult();
+        initializeMap();
     } 
     else{
-        alert("No data avilable.");
+        alert("Input data dosen't match the distance function");
         return false;
     }
     
