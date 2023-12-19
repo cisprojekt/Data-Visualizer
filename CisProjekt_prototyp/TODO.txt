@@ -1,0 +1,1 @@
+-ResetView Button is cut off by map div
