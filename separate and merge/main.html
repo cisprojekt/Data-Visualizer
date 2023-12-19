@@ -7,7 +7,10 @@
         <title>Data Visualizer</title>
         <link href="style/generalstyle.css" rel="stylesheet">
         <link href="style/actionstyle.css" rel="stylesheet">
+        <script src="script/map.js"></script>
+        <script src="build/clustering.js"></script>
         <script src="script/interact.js" ></script>
+
 
         <!--   Site-spesificiale Style   -->
         <style>
@@ -63,7 +66,7 @@
                 
                 <!-- Choose Funciton Button -->
                 
-                <select id="D_function" name="selcetFunction" >
+                <select id="D_function" name="selectFunction" >
                     <option value="noChoice">Add Function</option>
                     <option value="Euclidean">Euclidean distance</option>
                     <option value="Tanimoto">Tanimoto distance</option>
@@ -147,7 +150,7 @@
         });
     
         document.getElementById('dataFile').addEventListener('change', function (){
-            readFileInhalt();
+            readFileContents();
         })
 
         document.addEventListener("DOMContentLoaded", function() {
